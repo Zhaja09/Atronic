@@ -1,7 +1,7 @@
 # Atronic
-![encabezado](https://github.com/user-attachments/assets/3bda675c-43a0-4eff-8feb-45081a9c6ff4)
+![encabezado](https://github.com/user-attachments/assets/5e72c935-d3df-46db-8979-56f9136b80d5)
 
-![logo](https://github.com/user-attachments/assets/aba3610e-5dd1-4277-b885-0738fbc572b2)
+![logo](https://github.com/user-attachments/assets/117fd5f5-0654-433a-8ebc-8481030bd485)
 
 
 Índice.	2
