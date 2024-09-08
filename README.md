@@ -1,6 +1,6 @@
 # Atronic
 
-![Logotipo, nombre de la empresa
+![logo](https://github.com/user-attachments/assets/a13af68c-a195-4c76-afa8-22f0b29e8544)
 
 
 
@@ -54,3 +54,4 @@ Atronic se proyecta como la proveedora de material electrónico de confianza par
 (Colocar en primera persona sin repetir tanto la “Empresa”)
 
 
+![piedepagina](https://github.com/user-attachments/assets/96ae22c3-17df-40df-b216-31df58175429)
