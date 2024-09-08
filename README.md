@@ -1,6 +1,8 @@
 # Atronic
+![encabezado](https://github.com/user-attachments/assets/3bda675c-43a0-4eff-8feb-45081a9c6ff4)
 
-![Logotipo, nombre de la empresa
+![logo](https://github.com/user-attachments/assets/aba3610e-5dd1-4277-b885-0738fbc572b2)
+
 
 
 
@@ -50,6 +52,7 @@ Además, se aspira a colaborar estrechamente con las instituciones educativas, b
 
 Visión
 Atronic se proyecta como la proveedora de material electrónico de confianza para la comunidad universitaria, estableciendo un vínculo duradero con estudiantes de todos los semestres, desde los que recién comienzan hasta aquellos con mayor conocimiento y experiencia. Buscamos crecer constantemente y evitar quedarnos estancadas en proyectos aislados, ampliando nuestro impacto en el sector universitario. Nuestra visión es convertirnos en el socio preferido de los estudiantes universitarios, demostrando que, aunque la carrera pueda ser costosa, existen formas de ahorrar significativamente en materiales esenciales. Creemos que esos ahorros, acumulados con el tiempo, pueden hacer una diferencia sustancial en la vida académica de sus clientes. Trabajaremos para que cada estudiante, sin importar en qué etapa de su carrera se encuentre, continúe confiando en nosotros como su fuente principal de componentes electrónicos, apoyando su camino hacia la aprobación de sus materias y el éxito académico.
+![pie de pagina](https://github.com/user-attachments/assets/64d8bafc-28a2-4449-85cb-31079a700433)
 
 (Colocar en primera persona sin repetir tanto la “Empresa”)
 
