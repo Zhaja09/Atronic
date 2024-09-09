@@ -1,0 +1,126 @@
+/* Estilos generales del encabezado */
+.header {
+    background-color: #000; /* Negro para el fondo del encabezado */
+    color: #FFD700; /* Amarillo dorado para el texto */
+    padding: 10px 0;
+}
+
+.header-warper {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para la parte superior del encabezado */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+}
+
+.contact-container h4 {
+    margin: 0;
+    color: #FFD700; /* Amarillo dorado para el texto */
+    font-size: 16px;
+    margin-right: 15px; /* Espacio entre el texto y los íconos */
+}
+
+.social-nav {
+    display: flex;
+    align-items: center;
+}
+
+.social-nav a {
+    margin-right: 10px; /* Espacio entre los íconos */
+}
+
+/* Estilo para la barra de búsqueda */
+.header-search-from {
+    background-color: #333; /* Fondo oscuro para el formulario de búsqueda */
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.header-search-input {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    width: 200px; /* Ancho del campo de búsqueda */
+    color: #000; /* Texto negro */
+}
+
+.header-search-submit {
+    background-color: #FFD700; /* Amarillo dorado para el botón de búsqueda */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #000; /* Texto negro en el botón */
+}
+
+/* Estilo para la parte principal del encabezado */
+.header-main {
+    background-color: #000; /* Fondo negro para la sección principal */
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Ajustar el tamaño del logo */
+.header-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-top h4 {
+        margin-bottom: 10px;
+    }
+
+    .social-nav {
+        margin-top: 10px;
+    }
+
+    .header-search-from {
+        margin-top: 10px;
+    }
+}
+/* Estilos para los íconos de redes sociales */
+.header-top .nav img {
+    filter: invert(1); /* Invertir los colores de los íconos */
+    background-color: #FFD700; /* Fondo amarillo dorado para los íconos */
+    border-radius: 50%; /* Bordes redondeados para los íconos */
+    padding: 5px; /* Espacio interno alrededor de los íconos */
+}
+
+/* Opcional: Ajustar el tamaño de los íconos */
+.header-top .nav a img {
+    width: 30px; /* Ajustar según sea necesario */
+    height: 30px; /* Ajustar según sea necesario */
+}
+
+/* Estilos para los enlaces de redes sociales */
+.header-top .nav a {
+    display: inline-block;
+}
+
