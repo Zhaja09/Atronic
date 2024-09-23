@@ -320,10 +320,9 @@ ul.site_menu li a {
 
 .full_bg {
      background: url(../images/banner1.jpg);
-     background-size: 100%; 
-    background-position: left, center, right;
-    background-repeat: no-repeat;
-    height: 100vh; 
+     background-size: 100% 100%;
+     background-position: center;
+     background-repeat: no-repeat;
 }
 
 .banner_main {
@@ -425,6 +424,7 @@ ul.site_menu li a {
 .banner .carousel-indicators {
      display: none;
 }
+
 
 /** end banner section **/
 
