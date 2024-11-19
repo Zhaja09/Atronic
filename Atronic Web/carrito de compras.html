@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            text-align: center;
+            background-color: #ffc107;
+            color: #333;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        #cart {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item p {
+            margin: 0;
+        }
+
+        button {
+            background-color: #ffc107;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ffdd57;
+        }
+
+        .cart-summary {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .success, .empty {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .success {
+            background-color: #4caf50;
+        }
+
+        .empty {
+            background-color: #e63946;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Carrito de Compras</h1>
+    </header>
+
+    <div id="cart">
+        <div id="cart-items"></div>
+        <div class="cart-summary">
+            <p>Total: $<span id="total-price">0</span></p>
+            <button onclick="checkout()">Finalizar Compra</button>
+        </div>
+        <p id="empty-cart-message" class="empty" style="display: none;">El carrito está vacío.</p>
+        <p id="success-message" class="success" style="display: none;">¡Compra realizada con éxito!</p>
+    </div>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = '';
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                document.getElementById('empty-cart-message').style.display = 'block';
+                return;
+            } else {
+                document.getElementById('empty-cart-message').style.display = 'none';
+            }
+
+            cart.forEach(item => {
+                totalPrice += item.product.price * item.quantity;
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.className = 'cart-item';
+                cartItemDiv.innerHTML = `
+                    <p>${item.product.name} x ${item.quantity} - $${item.product.price * item.quantity}</p>
+                    <button onclick="removeFromCart(${item.product.id})">Eliminar</button>
+                `;
+                cartItemsDiv.appendChild(cartItemDiv);
+            });
+
+            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.product.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                document.getElementById('empty-cart-message').style.display = 'block';
+                document.getElementById('success-message').style.display = 'none';
+            } else {
+                document.getElementById('empty-cart-message').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+                cart = [];
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCart();
+            }
+        }
+
+        // Inicializar el carrito
+        updateCart();
+    </script>
+</body>
+
+</html>
