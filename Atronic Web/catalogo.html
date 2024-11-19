@@ -1,128 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Atronic UAEM</title>
+    <style>
+        /* Estilo general */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            background-color: #ffc107;
+            color: #fff;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+        }
+
+        /* Producto destacado */
+        .featured-product {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffeb99;
+        }
+
+        .featured-product img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .featured-product h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .featured-product p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Catálogo */
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product h2 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .product .precio {
+            color: #e63946;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .product button {
+            background-color: #ffc107;
+            color: #000;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .product button:hover {
+            background-color: #ffdd57;
+        }
+
+        /* Paginación */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .pagination button {
+            background-color: #ffc107;
+            color: #000;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .pagination button.active {
+            background-color: #000;
+            color: #ffc107;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
-	<h1>Catalogo de productos</h1>
-	<div class="catalog"></div> 
-	<section class="banner_main">
-		
-	 </section>
-	<div class="74LS02N Compuerta NOR">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/74LS02N-Compuerta-NOR.jpg" alt="Compuerta NOR 7402">
-		<h2>Compuerta NOR</h2>
-		<p class="precio">$8.00</p>
-		<input type="number" id="7402" value="1" min="1">
-		<button onclick="addToCart(1, '74LS02N', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="ESP32 DevkitC">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/AR1580-AR1581-ESP32-DevKitC-V4.jpg" alt="ESP32">
-		<h2>ESP32 DevkitC</h2>
-		<p class="precio">$130.00</p>
-		<input type="number" id="ESP32" value="1" min="1">
-		<button onclick="addToCart(1, 'ESP32', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="UNO R3 con cable">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Arduino-Uno-R3-THT-y-SMD.jpg" alt="Arduino UNO R3">
-		<h2>UNO R3</h2>
-		<p class="precio">$170.00</p>
-		<input type="number" id="UNOR3" value="1" min="1">
-		<button onclick="addToCart(1, 'UNO R3', 30)">Agregar al Carrito</button>
-	</div>
-	<div class=" 74LS08 Compuerta OR ">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Compuerta-AND-SN74LS08N.jpg" alt="Compuerta OR 7408">
-		<h2>Compuerta OR</h2>
-		<p class="precio">$8.00</p>
-		<input type="number" id="7408" value="1" min="1">
-		<button onclick="addToCart(1, '74LS08', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="74LS86 Compuerta XOR">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Compuerta-Exclusiva-SN74LS86N-XOR.jpg" alt="Compuerta Nor 7486">		
-		<h2>Compuerta XOR</h2>
-		<p class="precio">$8.00</p>
-		<input type="number" id="7486" value="1" min="1">
-		<button onclick="addToCart(1, '74LS86', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="74LS86 Compuerta NAND">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Compuerta-NAND-SN74LS00N.jpg" alt="Compuerta Nor 7400">		
-		<h2>Compuerta NAND</h2>
-		<p class="precio">$8.00</p>
-		<input type="number" id="7400" value="1" min="1">
-		<button onclick="addToCart(1, '74LS86', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="74LS04 Compuerta NOT">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Compuerta-NOT-SN74LS04N.jpg" alt="Compuerta Nor 7404">		
-		<h2>Compuerta NOT</h2>
-		<p class="precio">$8.00</p>
-		<input type="number" id="7404" value="1" min="1">
-		<button onclick="addToCart(1, '74LS04', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="74LS32 Compuerta OR">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Compuerta-OR-SN74LS32N.jpg" alt="Compuerta Nor 7432">		
-		<h2>Compuerta OR</h2>
-		<p class="precio">$8.00</p>
-		<input type="number" id="q7432" value="1" min="1">
-		<button onclick="addToCart(1, '74LS32', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="Display 7 Segmentos">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Display-7-segmentos-anodo-catado-comun-v6.jpg" alt="Dispaly 7 Segmentos">		
-		<h2>Display 7 Segmentos</h2>
-		<p class="precio">$10.00</p>
-		<input type="number" id="7Seg" value="1" min="1">
-		<button onclick="addToCart(1, 'Dis7Seg', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="Leds">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Leds.jpg" alt="Leds">		
-		<h2>Leds</h2>
-		<p class="precio">$1.00</p>
-		<input type="number" id="Leds" value="1" min="1">
-		<button onclick="addToCart(1, 'Leds', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="NE555">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/NE55.jpg" alt="NE555">		
-		<h2>NE555</h2>
-		<p class="precio">$5.00</p>
-		<input type="number" id="555" value="1" min="1">
-		<button onclick="addToCart(1, 'NE555', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="Resistencias">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Resistencias.jpg" alt="Resistencias Diferentes valores">		
-		<h2>Resistencias Diferentes Valores</h2>
-		<p class="precio">$1.00</p>
-		<input type="number" id="Res" value="1" min="1">
-		<button onclick="addToCart(1, 'Res', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="Capacitores">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/capacitores.png" alt="Capacitores">		
-		<h2>Capacitores Diferentes Valores</h2>
-		<p class="precio">$1.00</p>
-		<input type="number" id="Capacitores" value="1" min="1">
-		<button onclick="addToCart(1, 'Capacitor', 100)">Agregar al Carrito</button>
-	</div>
-	<div class="Protoboard">
-		<img src="https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/protoboard.png" alt="Protoboard">		
-		<h2>Protoboard</h2>
-		<p class="precio">$50.00</p>
-		<input type="number" id="Proto" value="1" min="1">
-		<button onclick="addToCart(1, 'Proto', 100)">Agregar al Carrito</button>
-	</div>
-	<a href="Carrito.html">Ir al Carrito</a>
-	<script>
-		function addToCart(id,name,price){
-			const quantity = parseInt(document-getElementById(`quantity-${id}`).value);
-			const cart = JSON.parse(localStorage.getItem("cart")) || [];
-			const productIndex = cart.findIndex(item => item.id === id);
-			if (productIndex > -1){
-				cart[productIndex].quantity +- quantity;
-			} else {
-				cart.push({id, name, price, quantity});
-			}
-			localStorage.setItem("cart", JSON.stringify(cart));
-			alert(`${name} agregado al carrito`)
-		}
-	</script>
+    <header>
+        <h1>Tienda Atronic UAEM</h1>
+        <p>Encuentra todo lo necesario para tus proyectos electrónicos</p>
+    </header>
+
+    <section class="featured-product" id="featured-product">
+        <!-- Producto más destacado se mostrará aquí -->
+    </section>
+
+    <div class="catalog" id="catalog"></div>
+    <div class="pagination" id="pagination"></div>
+
+    <footer>
+        <p>&copy; 2024 Tienda Atronic UAEM | <a href="carrito.html">Ver Carrito</a></p>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: "Compuerta NOR", price: 8, img: "https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/74LS02N-Compuerta-NOR.jpg", count: 0 },
+            { id: 2, name: "ESP32 DevkitC", price: 130, img: "https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/AR1580-AR1581-ESP32-DevKitC-V4.jpg", count: 0 },
+            { id: 3, name: "UNO R3", price: 170, img: "https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Arduino-Uno-R3-THT-y-SMD.jpg", count: 0 },
+            { id: 4, name: "Compuerta AND", price: 8, img: "https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Compuerta-AND-SN74LS08N.jpg", count: 0 },
+            { id: 5, name: "Compuerta XOR", price: 8, img: "https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Compuerta-Exclusiva-SN74LS86N-XOR.jpg", count: 0 },
+            { id: 6, name: "NE555", price: 5, img: "https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/NE55.jpg", count: 0 },
+            { id: 7, name: "Resistencias", price: 1, img: "https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/Resistencias.jpg", count: 0 },
+            { id: 8, name: "Capacitores", price: 1, img: "https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/capacitores.png", count: 0 },
+            { id: 9, name: "Protoboard", price: 50, img: "https://raw.githubusercontent.com/Zhaja09/Atronic/refs/heads/main/imagenes/protoboard.png", count: 0 }
+        ];
+
+        const itemsPerPage = 3;
+        let currentPage = 1;
+
+        function renderFeaturedProduct() {
+            const featuredProduct = document.getElementById("featured-product");
+
+            // Obtener el producto más seleccionado
+            const mostSelected = products.reduce((max, product) => (product.count > max.count ? product : max), { count: 0 });
+
+            if (mostSelected.count > 0) {
+                featuredProduct.innerHTML = `
+                    <img src="${mostSelected.img}" alt="${mostSelected.name}">
+                    <h2>${mostSelected.name}</h2>
+                    <p>producto Destacado</p>
+                `;
+            } else {
+                featuredProduct.innerHTML = `<p>No hay productos destacados aún.</p>`;
+            }
+        }
+
+        function renderProducts() {
+            const catalog = document.getElementById("catalog");
+            catalog.innerHTML = "";
+
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const productsToDisplay = products.slice(start, end);
+
+            productsToDisplay.forEach(product => {
+                catalog.innerHTML += `
+                    <div class="product">
+                        <img src="${product.img}" alt="${product.name}">
+                        <h2>${product.name}</h2>
+                        <p class="precio">$${product.price.toFixed(2)}</p>
+                        <input type="number" id="product-${product.id}" value="1" min="1">
+                        <button onclick="addToCart(${product.id}, '${product.name}', ${product.price})">Agregar al Carrito</button>
+                    </div>
+                `;
+            });
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const pagination = document.getElementById("pagination");
+            pagination.innerHTML = "";
+
+            const totalPages = Math.ceil(products.length / itemsPerPage);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement("button");
+                button.textContent = i;
+                button.className = i === currentPage ? "active" : "";
+                button.onclick = () => {
+                    currentPage = i;
+                    renderProducts();
+                };
+                pagination.appendChild(button);
+            }
+        }
+
+        function addToCart(id, name, price) {
+            const quantity = parseInt(document.getElementById(`product-${id}`).value);
+            const product = products.find(p => p.id === id);
+
+            product.count += quantity;
+
+            alert(`${name} agregado al carrito`);
+            renderFeaturedProduct();
+        }
+
+        renderFeaturedProduct();
+        renderProducts();
+    </script>
 </body>
+
 </html>
